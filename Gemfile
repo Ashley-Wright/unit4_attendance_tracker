@@ -35,6 +35,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test, :development do
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+  gem 'rspec'
+  gem 'rspec-rails'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
