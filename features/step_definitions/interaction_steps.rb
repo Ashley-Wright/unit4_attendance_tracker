@@ -1,5 +1,5 @@
 When(/^I go to the home page$/) do
-  pending # express the regexp above with the code you wish you had
+  visit root_path
 end
 
 When(/^I follow "(.*?)"$/) do |arg1|
