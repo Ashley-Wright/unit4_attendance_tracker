@@ -2,8 +2,8 @@ When(/^I go to the home page$/) do
   visit root_path
 end
 
-When(/^I follow "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+When(/^I follow "(.*?)"$/) do |text|
+  click_link(text)
 end
 
 When(/^I fill in "(.*?)" for "(.*?)"$/) do |arg1, arg2|
