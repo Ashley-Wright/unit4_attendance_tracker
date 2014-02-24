@@ -6,8 +6,8 @@ When(/^I follow "(.*?)"$/) do |text|
   click_link(text)
 end
 
-When(/^I fill in "(.*?)" for "(.*?)"$/) do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+When(/^I fill in "(.*?)" for "(.*?)"$/) do |content, field|
+  fill_in(field, with: content)
 end
 
 When(/^I press "(.*?)"$/) do |arg1|

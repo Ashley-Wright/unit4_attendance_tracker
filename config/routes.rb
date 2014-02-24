@@ -1,10 +1,14 @@
 Unit4AttendanceTracker::Application.routes.draw do
+  # devise_for :instructors
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root :to => "static_pages#home"
   get 'static_pages/home' => 'static_pages#home'
+
+  devise_for :instructors, controllers: { registrations: "registrations" }
+  resources :instructors, only: [:new]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
