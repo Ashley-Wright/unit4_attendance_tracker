@@ -7,6 +7,7 @@ When(/^I follow "(.*?)"$/) do |text|
 end
 
 When(/^I fill in "(.*?)" for "(.*?)"$/) do |content, field|
+  pending
   fill_in(field, with: content)
 end
 

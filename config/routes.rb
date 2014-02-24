@@ -7,7 +7,8 @@ Unit4AttendanceTracker::Application.routes.draw do
   root :to => "static_pages#home"
   get 'static_pages/home' => 'static_pages#home'
 
-  devise_for :instructors, controllers: { registrations: "registrations" }
+  devise_for :instructors
+  # controllers: { registrations: :registrations }
   resources :instructors, only: [:new]
 
   # Example of regular route:
