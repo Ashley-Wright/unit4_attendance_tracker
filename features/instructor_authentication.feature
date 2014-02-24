@@ -10,10 +10,10 @@ Feature: Instructor_authentication
     When I go to the home page
       And I follow "Sign Up"
       And I fill in "joe@example.com" for "Email"
-      And I fill in "password" for "user_password"
+      And I fill in "password" for "Password"
       And I fill in "password" for "Password confirmation"
       And I press "Sign up"
-    Then I should see "You have signed up successfully"
+    Then I should see "Welcome! You have signed up successfully"
       And I should see "Sign Out"
       And I should not see "Sign In"
       And I should not see "Sign Up"
