@@ -20,3 +20,18 @@ Feature: Instructor_authentication
     When I follow "Sign Out"
     Then I should not see "Sign Out"
       And I should see "Sign In"
+
+
+  Scenario: Instructor can sign in and sign out
+    Given the instructor "joe@example.com" with "password"
+    When I go to the home page
+      And I follow "Sign In"
+      And I fill in "joe@example.com" for "Email"
+      And I fill in "password" for "Password"
+      And I press "Sign in"
+    Then I should see "Signed in successfully."
+      And I should see "Sign Out"
+      And I should not see "Sign In"
+    When I follow "Sign Out"
+    Then I should not see "Sign Out"
+      And I should see "Sign In"

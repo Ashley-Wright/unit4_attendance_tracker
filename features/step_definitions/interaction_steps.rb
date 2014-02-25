@@ -21,3 +21,7 @@ end
 Then(/^I should not see "(.*?)"$/) do |text|
   page.should_not have_content(text)
 end
+
+Given(/^the instructor "(.*?)" with "(.*?)"$/) do |email, password|
+  Instructor.create(email: email, password: password, password_confirmation: password)
+end
