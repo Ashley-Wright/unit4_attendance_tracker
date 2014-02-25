@@ -1,5 +1,5 @@
 Unit4AttendanceTracker::Application.routes.draw do
-  # devise_for :instructors
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -8,7 +8,6 @@ Unit4AttendanceTracker::Application.routes.draw do
   get 'static_pages/home' => 'static_pages#home'
 
   devise_for :instructors
-  # controllers: { registrations: :registrations }
   resources :instructors, only: [:new]
 
   # Example of regular route:
