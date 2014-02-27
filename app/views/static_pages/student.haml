@@ -1,0 +1,7 @@
+%h2 Student
+
+- if current_student
+  = link_to 'Sign Out', destroy_student_session_path, method: :delete
+- else
+  = link_to 'Sign Up', new_student_registration_path
+  = link_to 'Sign In', new_student_session_path

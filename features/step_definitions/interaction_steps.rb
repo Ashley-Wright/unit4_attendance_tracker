@@ -25,3 +25,7 @@ end
 Given(/^the instructor "(.*?)" with "(.*?)"$/) do |email, password|
   Instructor.create(email: email, password: password, password_confirmation: password)
 end
+
+Given(/^the student "(.*?)" with "(.*?)"$/) do |email, password|
+  Student.create(email: email, password: password, password_confirmation: password)
+end

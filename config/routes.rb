@@ -7,9 +7,13 @@ Unit4AttendanceTracker::Application.routes.draw do
   root :to => "static_pages#home"
   get 'static_pages/home' => 'static_pages#home'
   get 'static_pages/instructor' => 'static_pages#instructor'
+  get 'static_pages/student' => 'static_pages#student'
 
   devise_for :instructors
   resources :instructors, only: [:new]
+
+  devise_for :students
+  resources :students, only: [:new]
 
   # scope :instructor do
   #   root :to => 'static_pages#instructor'
