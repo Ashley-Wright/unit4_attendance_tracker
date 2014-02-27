@@ -1,0 +1,7 @@
+%h2 Instructor
+
+- if current_instructor
+  = link_to 'Sign Out', destroy_instructor_session_path, method: :delete
+- else
+  = link_to 'Sign Up', new_instructor_registration_path
+  = link_to 'Sign In', new_instructor_session_path

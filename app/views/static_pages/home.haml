@@ -1,3 +1,5 @@
-%h2 Test
 
-/ = link_to 'Sign Up', new_instructor_path
+%h2 Home
+- unless current_instructor
+  = link_to 'Instructor', static_pages_instructor_path
+  = link_to 'Student', '#'

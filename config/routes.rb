@@ -6,9 +6,14 @@ Unit4AttendanceTracker::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root :to => "static_pages#home"
   get 'static_pages/home' => 'static_pages#home'
+  get 'static_pages/instructor' => 'static_pages#instructor'
 
   devise_for :instructors
   resources :instructors, only: [:new]
+
+  # scope :instructor do
+  #   root :to => 'static_pages#instructor'
+  # end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
