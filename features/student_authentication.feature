@@ -10,11 +10,13 @@ Feature: Student_authentication
     When I go to the home page
       And I follow "Student"
       And I follow "Sign Up"
+      And I fill in "Jim Smith" for "Name"
       And I fill in "jim@example.com" for "Email"
       And I fill in "password" for "Password"
       And I fill in "password" for "Password confirmation"
       And I press "Sign up"
     Then I should see "Welcome! You have signed up successfully"
+      And I should see "Jim Smith"
       And I should see "Sign Out"
       And I should not see "Sign In"
       And I should not see "Sign Up"
@@ -25,7 +27,7 @@ Feature: Student_authentication
 
 
   Scenario: Student can sign in and sign out
-    Given the student "jim@example.com" with "password"
+    Given the student "jim@example.com" with name "Jim Smith" and password "password"
     When I go to the home page
       And I follow "Student"
       And I follow "Sign In"
@@ -33,6 +35,7 @@ Feature: Student_authentication
       And I fill in "password" for "Password"
       And I press "Sign in"
     Then I should see "Signed in successfully."
+      And I should see "Jim Smith"
       And I should see "Sign Out"
       And I should not see "Sign In"
     When I follow "Sign Out"

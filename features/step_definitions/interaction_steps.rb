@@ -22,10 +22,10 @@ Then(/^I should not see "(.*?)"$/) do |text|
   page.should_not have_content(text)
 end
 
-Given(/^the instructor "(.*?)" with "(.*?)"$/) do |email, password|
-  Instructor.create(email: email, password: password, password_confirmation: password)
+Given(/^the instructor "(.*?)" with name "(.*?)" and password "(.*?)"$/) do |email, name, password|
+  Instructor.create(name: name, email: email, password: password, password_confirmation: password)
 end
 
-Given(/^the student "(.*?)" with "(.*?)"$/) do |email, password|
-  Student.create(email: email, password: password, password_confirmation: password)
+Given(/^the student "(.*?)" with name "(.*?)" and password "(.*?)"$/) do |email, name, password|
+  Student.create(name: name, email: email, password: password, password_confirmation: password)
 end
