@@ -1,0 +1,6 @@
+%h2 New Course
+
+= form_for @course do |f|
+  = f.label :title
+  = f.text_field :title
+  = f.submit "Save"

@@ -8,3 +8,7 @@
 
 - if current_instructor
   %h2= current_instructor.name
+  %h3 Courses
+  - @instructor_courses.each do |course|
+    = course.title
+  = link_to 'create a new course', new_course_path
