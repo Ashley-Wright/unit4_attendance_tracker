@@ -30,13 +30,13 @@ Given(/^the student "(.*?)" with name "(.*?)" and password "(.*?)"$/) do |email,
   Student.create(name: name, email: email, password: password, password_confirmation: password)
 end
 
-Given(/^I am signed in as Instructor$/) do
+Given(/^I am signed in as Instructor "(.*?)" with password "(.*?)"$/) do |email, password|
   steps %Q{
     When I go to the home page
       And I follow "Instructor"
       And I follow "Sign In"
-      And I fill in "joe@example.com" for "Email"
-      And I fill in "password" for "Password"
+      And I fill in "#{email}" for "Email"
+      And I fill in "#{password}" for "Password"
       And I press "Sign in"
   }
 end

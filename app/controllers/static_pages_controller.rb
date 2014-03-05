@@ -4,9 +4,11 @@ class StaticPagesController < ApplicationController
 
   def instructor
     @instructor_courses = []
-    Course.all.each do |course|
-      if course.instructor_id == current_instructor.id
-        @instructor_courses.push(course)
+    if current_instructor
+      Course.all.each do |course|
+        if course.instructor_id == current_instructor.id
+          @instructor_courses.push(course)
+        end
       end
     end
     @instructor_courses
