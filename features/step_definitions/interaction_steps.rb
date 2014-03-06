@@ -40,3 +40,23 @@ Given(/^I am signed in as Instructor "(.*?)" with password "(.*?)"$/) do |email,
       And I press "Sign in"
   }
 end
+
+Given(/^a course titled "(.*?)"$/) do |title|
+  pending # express the regexp above with the code you wish you had
+end
+
+Given(/^I am signed in as Student "(.*?)" with password "(.*?)"$/) do |email, password|
+  steps %Q{
+    When I go to the home page
+      And I follow "Student"
+      And I follow "Sign In"
+      And I fill in "#{email}" for "Email"
+      And I fill in "#{password}" for "Password"
+      And I press "Sign in"
+  }
+end
+
+When(/^I click "(.*?)"$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+

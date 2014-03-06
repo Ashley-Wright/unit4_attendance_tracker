@@ -12,4 +12,8 @@ class CoursesController < ApplicationController
       render 'new'
     end
   end
+
+  def index
+    @courses = Course.all
+  end
 end

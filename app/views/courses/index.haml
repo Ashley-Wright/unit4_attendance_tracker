@@ -1,0 +1,5 @@
+%h2 Courses
+%ul
+- @courses.each do |course|
+  %li= course.title
+  = button_to 'add'
