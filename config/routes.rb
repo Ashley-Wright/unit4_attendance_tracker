@@ -17,6 +17,8 @@ Unit4AttendanceTracker::Application.routes.draw do
 
   resources :courses
 
+  resources :enrollments
+
   # scope :instructor do
   #   root :to => 'static_pages#instructor'
   # end

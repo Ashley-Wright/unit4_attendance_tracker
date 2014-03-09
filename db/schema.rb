@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140306181422) do
+ActiveRecord::Schema.define(version: 20140309200635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20140306181422) do
   end
 
   add_index "courses", ["instructor_id"], name: "index_courses_on_instructor_id", using: :btree
+
+  create_table "enrollments", force: true do |t|
+    t.integer  "course_id"
+    t.integer  "student_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "enrollments", ["course_id"], name: "index_enrollments_on_course_id", using: :btree
+  add_index "enrollments", ["student_id"], name: "index_enrollments_on_student_id", using: :btree
 
   create_table "instructors", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -44,16 +54,6 @@ ActiveRecord::Schema.define(version: 20140306181422) do
 
   add_index "instructors", ["email"], name: "index_instructors_on_email", unique: true, using: :btree
   add_index "instructors", ["reset_password_token"], name: "index_instructors_on_reset_password_token", unique: true, using: :btree
-
-  create_table "registrations", force: true do |t|
-    t.integer  "course_id"
-    t.integer  "student_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "registrations", ["course_id"], name: "index_registrations_on_course_id", using: :btree
-  add_index "registrations", ["student_id"], name: "index_registrations_on_student_id", using: :btree
 
   create_table "students", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -1,5 +1,5 @@
 class Course < ActiveRecord::Base
   belongs_to :instructor
-  has_many :registrations
-  has_many :students, through: :registrations
+  has_many :enrollments
+  has_many :students, through: :enrollments
 end

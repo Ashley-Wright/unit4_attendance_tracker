@@ -10,6 +10,6 @@ Feature: Courses Sign Up
       And I should see "add a course"
     When I follow "add a course"
     Then I should see "Class0"
-    When I click "add"
+    When I press "add"
     Then I should see "Courses"
-      And I should see "Chemistry"
+      And I should see "Class0"
