@@ -1,5 +1,10 @@
-%h2= @course.title
-= link_to "activate code", course_meetings_path(@course), method: :post
-%h3 Students
-- @course_enrollments.each do |enrollment|
-  = enrollment.student.name
+- if current_instructor
+  %h2= @course.title
+  = link_to "activate code", course_meetings_path(@course), method: :post
+  %h3 Students
+  - @course_enrollments.each do |enrollment|
+    = enrollment.student.name
+
+- if current_student
+  %h2= @course.title
+  = link_to "Enter Today's Code", "#"

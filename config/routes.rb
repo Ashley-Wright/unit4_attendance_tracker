@@ -15,7 +15,7 @@ Unit4AttendanceTracker::Application.routes.draw do
   devise_for :students
   resources :students, only: [:new]
 
-  resources :courses do
+  resources :courses, only: [:new, :index, :create, :show] do
     resources :enrollments, only: [:create]
     resources :meetings, only: [:create]
   end
