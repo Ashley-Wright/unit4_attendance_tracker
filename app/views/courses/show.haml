@@ -1,0 +1,4 @@
+%h2= @course.title
+%h3 Students
+- @course_enrollments.each do |enrollment|
+  = enrollment.student.name

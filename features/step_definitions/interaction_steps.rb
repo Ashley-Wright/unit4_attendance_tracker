@@ -1,5 +1,6 @@
 When(/^I go to the home page$/) do
   visit root_path
+  # visit static_pages_home_path
 end
 
 When(/^I follow "(.*?)"$/) do |text|
@@ -55,3 +56,26 @@ Given(/^I am signed in as Student "(.*?)" with password "(.*?)"$/) do |email, pa
       And I press "Sign in"
   }
 end
+
+Given(/^Instructor creates course$/) do
+  steps %Q{
+    Given the instructor "joe@example.com" with name "Joe Smith" and password "password"
+      And I am signed in as Instructor "joe@example.com" with password "password"
+    When I follow "create a new course"
+      And I fill in "Chemistry" for "Title"
+      And I press "Save"
+      And I follow "Sign Out"
+  }
+end
+
+Given(/^Student signs up for course$/) do
+  steps %Q{
+    Given the student "jim@example.com" with name "Jim Smith" and password "password"
+      And I am signed in as Student "jim@example.com" with password "password"
+    When I follow "add a course"
+    When I follow "add"
+      And I follow "Sign Out"
+  }
+end
+
+
