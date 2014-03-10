@@ -17,6 +17,7 @@ Unit4AttendanceTracker::Application.routes.draw do
 
   resources :courses do
     resources :enrollments, only: [:create]
+    resources :meetings, only: [:create]
   end
 
   # scope :instructor do

@@ -1,6 +1,5 @@
 When(/^I go to the home page$/) do
   visit root_path
-  # visit static_pages_home_path
 end
 
 When(/^I follow "(.*?)"$/) do |text|
@@ -78,4 +77,7 @@ Given(/^Student signs up for course$/) do
   }
 end
 
-
+Then(/^I should see the daily code$/) do
+  code = page.find(:xpath, '//h3').text
+  code.length.should eq(6)
+end

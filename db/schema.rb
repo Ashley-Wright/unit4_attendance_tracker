@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140309200635) do
+ActiveRecord::Schema.define(version: 20140310153338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140309200635) do
     t.integer  "instructor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "meeting_id"
   end
 
   add_index "courses", ["instructor_id"], name: "index_courses_on_instructor_id", using: :btree
@@ -54,6 +55,15 @@ ActiveRecord::Schema.define(version: 20140309200635) do
 
   add_index "instructors", ["email"], name: "index_instructors_on_email", unique: true, using: :btree
   add_index "instructors", ["reset_password_token"], name: "index_instructors_on_reset_password_token", unique: true, using: :btree
+
+  create_table "meetings", force: true do |t|
+    t.string   "code"
+    t.integer  "course_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "meetings", ["course_id"], name: "index_meetings_on_course_id", using: :btree
 
   create_table "students", force: true do |t|
     t.string   "email",                  default: "", null: false

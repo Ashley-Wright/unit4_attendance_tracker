@@ -1,4 +1,5 @@
 %h2= @course.title
+= link_to "activate code", course_meetings_path(@course), method: :post
 %h3 Students
 - @course_enrollments.each do |enrollment|
   = enrollment.student.name
