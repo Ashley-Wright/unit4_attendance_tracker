@@ -3,7 +3,7 @@ When(/^I go to the home page$/) do
 end
 
 When(/^I follow "(.*?)"$/) do |text|
-  click_link(text)
+  first(:link, text).click
 end
 
 When(/^I fill in "(.*?)" for "(.*?)"$/) do |content, field|
