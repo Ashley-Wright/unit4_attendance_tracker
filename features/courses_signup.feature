@@ -10,6 +10,6 @@ Feature: Courses Sign Up
       And I should see "add a course"
     When I follow "add a course"
     Then I should see "Class0"
-    When I press "add"
+    When I follow "add"
     Then I should see "Courses"
       And I should see "Class0"

@@ -15,9 +15,9 @@ Unit4AttendanceTracker::Application.routes.draw do
   devise_for :students
   resources :students, only: [:new]
 
-  resources :courses
-
-  resources :enrollments
+  resources :courses do
+    resources :enrollments, only: [:create]
+  end
 
   # scope :instructor do
   #   root :to => 'static_pages#instructor'

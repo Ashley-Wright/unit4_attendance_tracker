@@ -13,4 +13,9 @@ class StaticPagesController < ApplicationController
     end
     @instructor_courses
   end
+
+  def student
+    @student_enrollments = Enrollment.joins(:course, :student).where(student: current_student)
+  end
+
 end
