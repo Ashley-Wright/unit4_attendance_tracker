@@ -5,4 +5,6 @@ class Student < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :enrollments
   has_many :courses, through: :enrollments
+  has_many :attendances
+  has_many :meetings, through: :attendances
 end

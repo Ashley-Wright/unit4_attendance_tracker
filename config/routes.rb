@@ -18,7 +18,10 @@ Unit4AttendanceTracker::Application.routes.draw do
   resources :courses, only: [:new, :index, :create, :show] do
     resources :enrollments, only: [:create]
     resources :meetings, only: [:create]
+    resources :attendances, only: [:new, :create]
   end
+
+  resources :attendances, only: [:create]
 
   # scope :instructor do
   #   root :to => 'static_pages#instructor'
