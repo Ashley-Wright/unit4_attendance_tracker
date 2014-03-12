@@ -4,6 +4,9 @@
   %h3 Students
   - @course_enrollments.each do |enrollment|
     = enrollment.student.name
+  %h3 Meetings
+  - @course_meetings.each do |meeting|
+    = meeting.created_at
 
 - if current_student
   %h2= @course.title

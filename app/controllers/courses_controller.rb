@@ -20,5 +20,6 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
     @course_enrollments = Enrollment.joins(:course, :student).where(course: @course)
+    @course_meetings = Meeting.where(course: @course)
   end
 end
