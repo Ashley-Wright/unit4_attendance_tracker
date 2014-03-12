@@ -1,3 +1,9 @@
 %h2 Date
 %h3= @code
-= javascript_include_tag "create_meeting"
+
+:javascript
+  setTimeout('delayedRedirect()', 30000);
+
+  function delayedRedirect(){
+    window.location.href = document.referrer;
+  }
