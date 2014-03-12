@@ -9,11 +9,14 @@ class AttendancesController < ApplicationController
     code = params[:attendance][:code]
 
     if meeting
-      if meeting[0].code == code
+      if meeting[0].created_at < 5.minutes.ago
+        flash[:notice] = "Too Late"
+        redirect_to new_course_attendance_path(@@course)
+      elsif meeting[0].code == code
         Attendance.create!(meeting: meeting[0], student: current_student)
         flash[:notice] = "Code was correct"
         redirect_to course_path(@@course)
-      else
+      elsif
         flash[:notice] = "Try again"
         redirect_to new_course_attendance_path(@@course)
       end
