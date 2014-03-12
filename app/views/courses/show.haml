@@ -1,4 +1,5 @@
 - if current_instructor
+  = render "layouts/instructor_nav"
   %h2= @course.title
   = link_to "activate code", course_meetings_path(@course), method: :post
   %h3 Students
@@ -9,5 +10,6 @@
     = link_to meeting.created_at, course_meeting_path(@course, meeting)
 
 - if current_student
+  = render "layouts/student_nav"
   %h2= @course.title
   = link_to "Enter Today's Code", new_course_attendance_path(@course)

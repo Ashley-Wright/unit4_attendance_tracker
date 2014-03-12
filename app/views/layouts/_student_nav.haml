@@ -1,0 +1,6 @@
+- if current_student
+  = link_to 'Sign Out', destroy_student_session_path, method: :delete
+  = link_to 'Home', static_pages_student_path
+- else
+  = link_to 'Sign Up', new_student_registration_path
+  = link_to 'Sign In', new_student_session_path
