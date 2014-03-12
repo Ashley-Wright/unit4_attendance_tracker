@@ -9,6 +9,8 @@
     = csrf_meta_tags
   %body
     = yield
-    = flash.notice
-    = flash.alert
+    .row
+      .small-offset-1.small-6.columns
+        = flash.notice
+        = flash.alert
     = javascript_include_tag "application"

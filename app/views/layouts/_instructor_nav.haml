@@ -1,6 +1,8 @@
 %nav.top-bar
   %section.top-bar-section
     %ul.right
+      %li= link_to 'Instructor', '#'
+      %li.divider
       - if current_instructor
         %li= link_to 'Sign Out', destroy_instructor_session_path, method: :delete
         %li.divider

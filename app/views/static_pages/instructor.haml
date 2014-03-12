@@ -1,8 +1,10 @@
 = render "layouts/instructor_nav"
-%h2 Instructor
-- if current_instructor
-  %h2= current_instructor.name
-  %h3 Courses
-  - @instructor_courses.each do |course|
-    = link_to course.title, course_path(course)
-  = link_to 'create a new course', new_course_path
+.row
+  .small-12.columns
+    - if current_instructor
+      %h3= current_instructor.name
+      %h4 Courses
+      %ul
+      - @instructor_courses.each do |course|
+        %li= link_to course.title, course_path(course)
+      = link_to 'create a new course', new_course_path
