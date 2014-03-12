@@ -6,7 +6,7 @@
     = enrollment.student.name
   %h3 Meetings
   - @course_meetings.each do |meeting|
-    = meeting.created_at
+    = link_to meeting.created_at, course_meeting_path(@course, meeting)
 
 - if current_student
   %h2= @course.title

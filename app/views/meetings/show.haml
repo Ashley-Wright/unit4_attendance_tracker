@@ -1,0 +1,4 @@
+%h2= @meeting.created_at
+%h3 Students
+- @meeting_attendances.each do |attendance|
+  = attendance.student.name

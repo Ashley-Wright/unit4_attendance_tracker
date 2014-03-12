@@ -1,0 +1,3 @@
+Fabricator(:attendance) do
+
+end
