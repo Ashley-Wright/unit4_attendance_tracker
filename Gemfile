@@ -6,6 +6,7 @@ source 'https://rubygems.org'
 gem 'haml-rails'
 gem 'html2haml'
 gem 'devise'
+gem 'foundation-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
