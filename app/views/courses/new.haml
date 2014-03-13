@@ -1,6 +1,7 @@
-%h2 New Course
-
-= form_for @course do |f|
-  = f.label :title
-  = f.text_field :title
-  = f.submit "Save"
+.row
+  .small-12.columns
+    %h2 New Course
+    = form_for @course do |f|
+      = f.label :title
+      = f.text_field :title
+      = f.submit "Save"

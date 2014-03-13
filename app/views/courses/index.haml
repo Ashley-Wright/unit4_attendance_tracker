@@ -1,5 +1,7 @@
-%h2 Courses
-%ul
-- @courses.each do |course|
-  %li= course.title
-  = link_to 'add', course_enrollments_path(course), method: :post
+.row
+  .small-12.columns
+    %h2 Courses
+    %ul
+    - @courses.each do |course|
+      %li= course.title
+      = link_to 'add', course_enrollments_path(course), method: :post
