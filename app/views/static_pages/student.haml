@@ -3,7 +3,7 @@
 .row
   .small-12.columns
   - if current_student
-    %h3= current_student.name
+    %h2= current_student.name
     %h4 Courses
     %ul
       - @student_enrollments.each do |enrollment|

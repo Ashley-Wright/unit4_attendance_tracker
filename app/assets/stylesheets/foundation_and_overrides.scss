@@ -117,7 +117,7 @@
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+$header-font-family: 'Bowlby One SC', serif;
 // $header-font-weight: normal;
 // $header-font-style: normal;
 // $header-font-color: #222;
@@ -1204,6 +1204,11 @@ $alert-close-padding: 0;
 
 @import 'foundation';
 
+body{
+  background: #CCCCCC;
+}
+
+
 #flash{
   min-height: 40px;
   max-height: 40px;
@@ -1213,4 +1218,8 @@ ul{
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+.red{
+  color: #F42B33;
 }
