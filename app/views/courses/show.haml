@@ -1,5 +1,6 @@
 - if current_instructor
   = render "layouts/instructor_nav"
+  = render "layouts/flash"
   .row
     .small-12.columns
       %h2= @course.title
@@ -15,6 +16,7 @@
 
 - if current_student
   = render "layouts/student_nav"
+  = render "layouts/flash"
   .row
     .small-12.columns
       %h2= @course.title

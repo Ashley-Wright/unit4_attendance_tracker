@@ -1,0 +1,8 @@
+.row#flash
+  .small-offset-7.small-5.columns
+    - if flash.notice
+      .alert-box.radius
+        = flash.notice
+    - if flash.alert
+      .alert-box.radius
+        = flash.alert

@@ -243,7 +243,7 @@
 
 // We use these to control text style.
 // $alert-font-weight: normal;
-// $alert-font-size: rem-calc(13);
+$alert-font-size: rem-calc(17);
 // $alert-font-color: #fff;
 // $alert-font-color-alt: scale-color($secondary-color, $lightness: -66%);
 
@@ -254,7 +254,7 @@
 // $alert-border-style: solid;
 // $alert-border-width: 1px;
 // $alert-border-color: scale-color($primary-color, $lightness: $alert-function-factor);
-// $alert-bottom-margin: rem-calc(20);
+$alert-bottom-margin: rem-calc(0);
 
 // We use these to style the close buttons
 // $alert-close-color: #333;
@@ -263,7 +263,7 @@
 // $alert-close-font-size: rem-calc(22);
 // $alert-close-opacity: 0.3;
 // $alert-close-opacity-hover: 0.5;
-// $alert-close-padding: 9px 6px 4px;
+$alert-close-padding: 0;
 
 // We use this to control border radius
 // $alert-radius: $global-radius;
@@ -1203,3 +1203,8 @@
 // $include-legacy-visibility-classes: true;
 
 @import 'foundation';
+
+#flash{
+  min-height: 40px;
+  max-height: 40px;
+}
