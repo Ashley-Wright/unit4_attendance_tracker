@@ -1,15 +1,21 @@
 - if current_instructor
   = render "layouts/instructor_nav"
-  %h2= @course.title
-  = link_to "activate code", course_meetings_path(@course), method: :post
-  %h3 Students
-  - @course_enrollments.each do |enrollment|
-    = enrollment.student.name
-  %h3 Meetings
-  - @course_meetings.each do |meeting|
-    = link_to meeting.created_at, course_meeting_path(@course, meeting)
+  .row
+    .small-12.columns
+      %h2= @course.title
+      = link_to "activate code", course_meetings_path(@course), method: :post
+      %h4 Students
+      - @course_enrollments.each do |enrollment|
+        = enrollment.student.name
+      %h4 Meetings
+      %ul
+        - @course_meetings.each do |meeting|
+          %li= link_to meeting.created_at, course_meeting_path(@course, meeting)
+
 
 - if current_student
   = render "layouts/student_nav"
-  %h2= @course.title
-  = link_to "Enter Today's Code", new_course_attendance_path(@course)
+  .row
+    .small-12.columns
+      %h2= @course.title
+      = link_to "Enter Today's Code", new_course_attendance_path(@course)

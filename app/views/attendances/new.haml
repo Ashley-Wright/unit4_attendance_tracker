@@ -1,6 +1,7 @@
-%h2 Date
-
-= form_for @attendance do |f|
-  = f.label :code
-  = f.text_field :code
-  = f.submit "Enter"
+.row
+  .small-12.columns
+    %h2 Date
+    = form_for @attendance do |f|
+      = f.label :code
+      = f.text_field :code
+      = f.submit "Enter"
