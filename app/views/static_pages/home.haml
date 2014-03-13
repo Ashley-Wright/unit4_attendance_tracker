@@ -2,5 +2,12 @@
 .row
   .small-12.columns
     %h2.red Bueller
-    = link_to 'Instructor', static_pages_instructor_path
-    = link_to 'Student', static_pages_student_path
+.row
+  .small-6.columns
+    .panel
+      = link_to 'Instructor', static_pages_instructor_path
+      %p Instructors, sign in to create courses and track student attendance.
+  .small-6.columns
+    .panel
+      = link_to 'Student', static_pages_student_path
+      %p Students, enroll in courses and enter daily attendance codes for credit.

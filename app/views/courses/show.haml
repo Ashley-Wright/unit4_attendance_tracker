@@ -5,13 +5,18 @@
     .small-12.columns
       %h2= @course.title
       = link_to "activate code", course_meetings_path(@course), method: :post
-      %h4 Students
-      - @course_enrollments.each do |enrollment|
-        = enrollment.student.name
-      %h4 Meetings
-      %ul
-        - @course_meetings.each do |meeting|
-          %li= link_to meeting.created_at.strftime('%a %d %b %Y'), course_meeting_path(@course, meeting)
+  .row
+    .small-6.columns
+      .panel.course
+        %h4 Students
+        - @course_enrollments.each do |enrollment|
+          = enrollment.student.name
+    .small-6.columns
+      .panel.course
+        %h4 Meetings
+        %ul
+          - @course_meetings.each do |meeting|
+            %li= link_to meeting.created_at.strftime('%a %d %b %Y'), course_meeting_path(@course, meeting)
 
 
 - if current_student

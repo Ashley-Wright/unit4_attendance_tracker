@@ -766,7 +766,7 @@ $alert-close-padding: 0;
 // $include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-// $panel-bg: scale-color(#fff, $lightness: -5%);
+$panel-bg: scale-color(#EEEEEE, $lightness: -5%);
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 
@@ -1222,10 +1222,16 @@ ul{
 
 .red{
   color: #F42B33;
+  text-align: center;
+  font-size: 90px;
 }
 
 h1.code{
   text-align: center;
   font-size: 80px;
   color: #F42B33;
+}
+
+.panel.course{
+  min-height: 500px;
 }
