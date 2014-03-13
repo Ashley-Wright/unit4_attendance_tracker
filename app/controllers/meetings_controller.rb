@@ -1,7 +1,7 @@
 class MeetingsController < ApplicationController
   def create
     course = Course.find_by_id(params[:course_id])
-    meeting = Meeting.where(course: course).where(:created_at => (1.day.ago)..Time.now)
+    meeting = Meeting.where(course: course).where(:created_at => (8.hours.ago)..Time.now)
     if meeting.empty?
       @code = 6.times.map{[*'0'..'9',*'A'..'Z'].sample}.join
       Meeting.create!(course: course, code: @code)

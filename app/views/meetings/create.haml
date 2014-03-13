@@ -2,7 +2,9 @@
 .row
   .small-12.columns
     %h2= Date.today.strftime('%a %d %b %Y')
-    %h3= @code
+.row
+  .small-12.columns
+    %h1.code= @code
 
 :javascript
   setTimeout('delayedRedirect()', 30000);
