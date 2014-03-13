@@ -9,8 +9,9 @@
     .small-6.columns
       .panel.course
         %h4 Students
-        - @course_enrollments.each do |enrollment|
-          = enrollment.student.name
+        %ul
+          - @course_enrollments.each do |enrollment|
+            %li= enrollment.student.name
     .small-6.columns
       .panel.course
         %h4 Meetings
