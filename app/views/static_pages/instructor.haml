@@ -6,6 +6,6 @@
       %h3= current_instructor.name
       %h4 Courses
       %ul
-      - @instructor_courses.each do |course|
-        %li= link_to course.title, course_path(course)
+        - @instructor_courses.each do |course|
+          %li= link_to course.title, course_path(course)
       = link_to 'create a new course', new_course_path

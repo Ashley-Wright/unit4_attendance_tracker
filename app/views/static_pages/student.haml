@@ -6,6 +6,6 @@
     %h3= current_student.name
     %h4 Courses
     %ul
-    - @student_enrollments.each do |enrollment|
-      %li= link_to enrollment.course.title, course_path(enrollment.course)
+      - @student_enrollments.each do |enrollment|
+        %li= link_to enrollment.course.title, course_path(enrollment.course)
     = link_to 'add a course', courses_path
