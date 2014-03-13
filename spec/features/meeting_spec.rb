@@ -14,9 +14,9 @@ describe "View Meetings" do
       page.should have_content("Chemistry")
       click_link "Chemistry"
       page.should have_content("Meetings")
-      page.should have_content(Date.today)
-      click_link "#{Date.today}"
-      page.should have_content(Date.today)
+      page.should have_content(Date.today.strftime('%a %d %b %Y'))
+      click_link "#{Date.today.strftime('%a %d %b %Y')}"
+      page.should have_content(Date.today.strftime('%a %d %b %Y'))
       page.should have_content("Students")
       page.should have_content(@jim.name)
     end

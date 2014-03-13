@@ -11,7 +11,7 @@
       %h4 Meetings
       %ul
         - @course_meetings.each do |meeting|
-          %li= link_to meeting.created_at, course_meeting_path(@course, meeting)
+          %li= link_to meeting.created_at.strftime('%a %d %b %Y'), course_meeting_path(@course, meeting)
 
 
 - if current_student

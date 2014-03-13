@@ -8,5 +8,4 @@ Feature: Activate Code
     When I follow "Chemistry"
     Then I should see "activate code"
     When I follow "activate code"
-    Then I should see "Date"
-      And I should see the daily code
+    Then I should see the daily code

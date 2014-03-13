@@ -2,7 +2,7 @@
 = render "layouts/flash"
 .row
   .small-12.columns
-    %h2= @meeting.created_at
+    %h2= @meeting.created_at.strftime('%a %d %b %Y')
     %h4 Students
     - @meeting_attendances.each do |attendance|
       = attendance.student.name

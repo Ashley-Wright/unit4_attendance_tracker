@@ -18,7 +18,7 @@ describe "Entering Attendance code" do
       click_link "Enter Today's Code"
     end
     it "should be able to enter today's code" do
-      page.should have_content("Date")
+      page.should have_content(Date.today.strftime('%a %d %b %Y'))
       fill_in "Code", with: "123ABC"
       click_button "Enter"
       page.should have_content("Chemistry")
