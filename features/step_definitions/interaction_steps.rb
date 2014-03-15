@@ -78,6 +78,6 @@ Given(/^Student signs up for course$/) do
 end
 
 Then(/^I should see the daily code$/) do
-  code = page.find(:xpath, '//h3').text
+  code = page.find(:xpath, '//h1').text
   code.length.should eq(6)
 end
